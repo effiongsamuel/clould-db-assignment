@@ -14,8 +14,8 @@ dist/
 *.egg-info/
 
 # Environment variables
-# .env
-# .env.*
+.env
+.env.*
 
 # IDE settings
 .vscode/
