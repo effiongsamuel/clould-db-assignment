@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "accountName": {
-      "value": "fykio-3mtt-azure-cosmos-db-001"
+      "value": "samueleffiong-3mtt-azure-cosmos-db-001"
     },
     "location": {
       "value": "eastus"
@@ -12,10 +12,10 @@
       "value": ""
     },
     "databaseName": {
-      "value": "FykioAppDatabase"
+      "value": "Samueleffiong-3mmt-AppDatabase"
     },
     "containerName": {
-      "value": "FykioItems"
+      "value": "Samueleffiong-3mmt-AppContainer"
     },
     "partitionKeyPath": {
       "value": "/partitionKey"
