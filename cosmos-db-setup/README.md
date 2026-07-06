@@ -96,6 +96,23 @@ az deployment group create \
   --name cosmos-deploy-$(date +%Y%m%d%H%M%S)
 ```
 
+note: if step 4 not work delete :
+
+```bash
+az cosmosdb delete \
+  --name samueleffiong-3mtt-azure-cosmos-db-001 \
+  --resource-group rg-cosmosdb-dev \
+  --yes
+```
+
+comfirm it was deleted :
+
+```bash
+az cosmosdb show \
+  --name samueleffiong-3mtt-azure-cosmos-db-001 \
+  --resource-group rg-cosmosdb-dev
+```
+
 Deployment typically completes in **3–5 minutes**.
 
 ### Step 5 — Review outputs
