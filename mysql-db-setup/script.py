@@ -3,7 +3,7 @@ from mysql.connector import Error
 
 HOST = "samuel-3mtt-azure-mysql-db-001.mysql.database.azure.com"
 USER = "sammysqladmin"
-PASSWORD = "YOUR_ADMIN_PASSWORD"
+PASSWORD = "P@ssw0rd1234!"
 DB = "appdatabase"
 
 try:
