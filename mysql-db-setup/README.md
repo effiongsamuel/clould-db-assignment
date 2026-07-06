@@ -86,9 +86,41 @@ az deployment group create \
   --name mysql-deploy-$(date +%Y%m%d%H%M%S)
 ```
 
+check for faild deployment:
+
+```bash
+az mysql flexible-server show \
+  --resource-group rg-mysqldb-dev \
+  --name samuel-3mtt-azure-mysql-db-001
+```
+
+```bash
+az mysql flexible-server list \
+  --resource-group rg-mysqldb-dev \
+  -o table
+```
+
+delete previous if faild:
+
+```bash
+az mysql flexible-server delete \
+  --resource-group rg-mysqldb-dev \
+  --name samuel-3mtt-azure-mysql-db-001 \
+  --yes
+```
+
 Deployment typically completes in **5–10 minutes**.
 
 ### Step 5 — Review outputs
+
+
+u can do before first fore time stamp:
+
+```bash
+az deployment group list \
+  --resource-group rg-mysqldb-dev \
+  -o table
+```
 
 ```bash
 # ensure to change the timestamp to the one you used in step 4
@@ -96,6 +128,14 @@ az deployment group show \
   --resource-group rg-mysqldb-dev \
   --name mysql-deploy-<timestamp> \
   --query properties.outputs
+```
+
+```bash
+az deployment group show \
+  --resource-group rg-mysqldb-dev \
+  --name mysql-deploy-20260706064904 \
+  --query properties.outputs
+  -o json
 ```
 
 **Outputs provided:**
@@ -120,6 +160,7 @@ Connect using the endpoint from the outputs.
 ```bash
 mysql -h myapp-mysql-dev-001.mysql.database.azure.com -u mysqladmin -p
 ```
+
 *(Enter the password when prompted)*
 
 Once connected, verify the database and insert a record:

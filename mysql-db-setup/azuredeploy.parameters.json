@@ -3,16 +3,16 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "serverName": {
-      "value": "fykio-3mtt-azure-mysql-db-001"
+      "value": "samuel-3mtt-azure-mysql-db-001"
     },
     "administratorLogin": {
-      "value": "fykiomysqladmin"
+      "value": "sammysqladmin"
     },
     "administratorLoginPassword": {
       "value": "P@ssw0rd1234!"
     },
     "location": {
-      "value": "eastus"
+      "value": "westus2"
     },
     "version": {
       "value": "8.0.21"

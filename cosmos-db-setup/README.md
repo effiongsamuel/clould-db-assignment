@@ -113,6 +113,14 @@ az cosmosdb show \
   --resource-group rg-cosmosdb-dev
 ```
 
+list comos db
+
+```bash
+az cosmosdb list \
+  --resource-group rg-cosmosdb-dev \
+  -o table
+```
+
 Deployment typically completes in **3–5 minutes**.
 
 ### Step 5 — Review outputs
@@ -122,7 +130,16 @@ Deployment typically completes in **3–5 minutes**.
 az deployment group show \
   --resource-group rg-cosmosdb-dev \
   --name cosmos-deploy-<timestamp> \
-  --query properties.outputs
+  --query properties.outputs \
+  -o json
+```
+
+note if above step 5 fails u can do below to list your deployments first:
+
+```bash
+az deployment group list \
+  --resource-group rg-cosmosdb-dev \
+  -o table
 ```
 
 **Outputs provided:**
@@ -138,6 +155,19 @@ az deployment group show \
 | `containerName` | Container name |
 
 > **Security note:** `primaryConnectionString` and `primaryReadonlyKey` are returned as ARM outputs for convenience. In production, retrieve them directly from Key Vault or via Azure CLI to avoid logging sensitive values.
+
+```bash
+az cosmosdb keys list \
+  --resource-group rg-cosmosdb-dev \
+  --name samueleffiong-3mtt-azure-cosmos-db-001 \
+  --type connection-strings
+```
+
+```bash
+az cosmosdb keys list \
+  --resource-group rg-cosmosdb-dev \
+  --name samueleffiong-3mtt-azure-cosmos-db-001
+```
 
 ## Deployment Scenarios
 
@@ -223,7 +253,7 @@ BODY='{
   "partitionKey": "category-electronics",
   "name": "Wireless Headphones",
   "price": 89.99,
-  "stock": 150,
+  "stock": 151,
   "tags": ["audio", "wireless", "bluetooth"],
   "createdAt": "2025-01-01T00:00:00Z"
 }'
