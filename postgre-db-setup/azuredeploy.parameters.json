@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "serverName": {
-      "value": "samuel-3mtt-azure-postgres-db-001"
+      "value": "samuel-3mtt-azure-postgres-db-002"
     },
     "administratorLogin": {
       "value": "sampgadmin"
@@ -12,7 +12,7 @@
       "value": "P@ssw0rd1234!"
     },
     "location": {
-      "value": "westus2"
+      "value": "westus3"
     },
     "version": {
       "value": "16"

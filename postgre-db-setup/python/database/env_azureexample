@@ -1,0 +1,5 @@
+POSTGRES_HOST=samuel-3mtt-azure-postgres-db-002.postgres.database.azure.com
+POSTGRES_USER=sampgadmin
+POSTGRES_PASSWORD=P@ssw0rd1234!
+POSTGRES_DB=appdatabase
+POSTGRES_PORT=5432

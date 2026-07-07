@@ -108,7 +108,7 @@ delete previous if failed:
 ```bash
 az postgres flexible-server delete \
   --resource-group rg-postgresdb-dev \
-  --name samuel-3mtt-azure-postgres-db-001 \
+  --name samuel-3mtt-azure-postgres-db-002 \
   --yes
 ```
 
