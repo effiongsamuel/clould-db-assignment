@@ -1,0 +1,56 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "serverName": {
+      "value": "samuel-3mtt-azure-postgres-db-001"
+    },
+    "administratorLogin": {
+      "value": "sampgadmin"
+    },
+    "administratorLoginPassword": {
+      "value": "P@ssw0rd1234!"
+    },
+    "location": {
+      "value": "westus2"
+    },
+    "version": {
+      "value": "16"
+    },
+    "skuName": {
+      "value": "Standard_B1ms"
+    },
+    "skuTier": {
+      "value": "Burstable"
+    },
+    "storageSizeGB": {
+      "value": 32
+    },
+    "backupRetentionDays": {
+      "value": 7
+    },
+    "geoRedundantBackup": {
+      "value": "Disabled"
+    },
+    "highAvailabilityMode": {
+      "value": "Disabled"
+    },
+    "databaseName": {
+      "value": "appdatabase"
+    },
+    "allowAllIPs": {
+      "value": true
+    },
+    "allowAzureServices": {
+      "value": true
+    },
+    "tags": {
+      "value": {
+        "environment": "dev",
+        "project": "postgresdb-setup",
+        "team": "cloud-engineering",
+        "managedBy": "ARM"
+      }
+    }
+  }
+}

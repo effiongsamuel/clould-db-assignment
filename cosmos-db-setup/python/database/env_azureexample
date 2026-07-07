@@ -1,0 +1,4 @@
+COSMOS_ENDPOINT=https://samueleffiong-3mtt-azure-cosmos-db-001.documents.azure.com:443/
+COSMOS_KEY=uJVBc8H47L3JexGzjat2bEQC5CPUTCrGJcbZaDYfUtouE9nUlYW1kRjpuRVUfcfEiS8apkM05zDIACDbSF87XA==
+AppDatabase=Samueleffiong-3mmt-AppDatabase
+Container=Samueleffiong-3mmt-AppContainer

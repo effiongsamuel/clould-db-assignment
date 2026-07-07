@@ -1,0 +1,4 @@
+MYSQL_HOST=samuel-3mtt-azure-mysql-db-001.mysql.database.azure.com
+MYSQL_USER=sammysqladmin
+MYSQL_PASSWORD=P@ssw0rd1234!
+MYSQL_DATABASE=appdatabase
