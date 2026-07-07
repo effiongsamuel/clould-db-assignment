@@ -50,8 +50,9 @@ redis_cache_name = "YOUR-UNIQUE-REDIS-NAME"
 
 ```bash
 terraform init
-terraform plan -var-file="terraform.tfvars"
-terraform apply -var-file="terraform.tfvars"
+terraform plan -var-file="terraform.tfvars"  -out=tfplan
+# terraform apply -var-file="terraform.tfvars"
+terraform apply tfplan
 ```
 
 Apply typically takes **15–20 minutes**, same as the ARM deployment — Redis cache creation is slow regardless of tooling.
@@ -62,12 +63,14 @@ Apply typically takes **15–20 minutes**, same as the ARM deployment — Redis 
 terraform output
 terraform output host_name
 terraform output -raw primary_access_key
+redis-cli -h samuel-3mtt-azure-redis-001.redis.cache.windows.net -p 6380 --tls -a "zeNqRiATvX3O655BY38HQSIMpBLlVdLeNAzCaH88tLY="
 ```
 
 ### Step 5 — Clean up
 
 ```bash
 terraform destroy -var-file="terraform.tfvars"
+az group delete --name rg-redis-dev --yes --no-wait
 ```
 
 ## Testing with Data
