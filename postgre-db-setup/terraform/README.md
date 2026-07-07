@@ -51,8 +51,9 @@ administrator_login_password = "YOUR-SECURE-PASSWORD"
 
 ```bash
 terraform init
-terraform plan -var-file="terraform.tfvars"
-terraform apply -var-file="terraform.tfvars"
+terraform plan -var-file="terraform.tfvars" -out=tfplan
+terraform apply tfplan
+# terraform apply -var-file="terraform.tfvars" "tfplan"
 ```
 
 ### Step 4 — Review outputs
@@ -60,6 +61,8 @@ terraform apply -var-file="terraform.tfvars"
 ```bash
 terraform output
 terraform output postgres_server_endpoint
+
+psql "host=samuel-3mtt-azure-postgres-db-001.postgres.database.azure.com port=5432 dbname=appdatabase user=sampgadmin password=P@ssw0rd1234! sslmode=require"
 ```
 
 ### Step 5 — Clean up

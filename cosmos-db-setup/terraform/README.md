@@ -54,8 +54,35 @@ Account name rules: 3–44 characters, lowercase letters and hyphens only, globa
 
 ```bash
 terraform init
-terraform plan -var-file="terraform.tfvars"
-terraform apply -var-file="terraform.tfvars"
+# terraform plan -var-file="terraform.tfvars"
+# terraform apply -var-file="terraform.tfvars"
+terraform plan -var-file="terraform.tfvars" -out=tfplan
+terraform apply tfplan
+# auto approve
+terraform apply -auto-approve -var-file="terraform.tfvars"
+```
+
+Verify
+
+```bash
+az cosmosdb show \
+  --resource-group rg-cosmosdb-dev \
+  --name samueleffiong-3mtt-azure-cosmos-db-001 \
+  --query "{Name:name,Location:location,Kind:kind,State:provisioningState}" \
+  -o table
+
+  # list db
+  az cosmosdb sql database list \
+  --account-name samueleffiong-3mtt-azure-cosmos-db-001 \
+  --resource-group rg-cosmosdb-dev \
+  -o table
+
+  # list containers
+  az cosmosdb sql container list \
+  --account-name samueleffiong-3mtt-azure-cosmos-db-001 \
+  --database-name Samueleffiong-3mmt-AppDatabase \
+  --resource-group rg-cosmosdb-dev \
+  -o table
 ```
 
 ### Step 4 — Review outputs

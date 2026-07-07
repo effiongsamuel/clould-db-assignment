@@ -7,7 +7,7 @@ variable "resource_group_name" {
 variable "location" {
   type        = string
   description = "Primary Azure region for the Cosmos DB account."
-  default     = "eastus"
+  default     = "eastus2"
 }
 
 variable "secondary_location" {

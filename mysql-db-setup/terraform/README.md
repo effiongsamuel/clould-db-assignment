@@ -50,8 +50,11 @@ administrator_login_password = "YOUR-SECURE-PASSWORD"
 
 ```bash
 terraform init
-terraform plan -var-file="terraform.tfvars"
-terraform apply -var-file="terraform.tfvars"
+# terraform plan -var-file="terraform.tfvars"
+# terraform apply -var-file="terraform.tfvars"
+terraform plan -var-file="terraform.tfvars" -out=tfplan
+terraform apply tfplan
+terraform apply -auto-approve -var-file="terraform.tfvars"
 ```
 
 ### Step 4 — Review outputs
@@ -59,12 +62,14 @@ terraform apply -var-file="terraform.tfvars"
 ```bash
 terraform output
 terraform output mysql_server_endpoint
+mysql -h myapp-mysql-dev-001.mysql.database.azure.com -u mysqladmin -p
 ```
 
 ### Step 5 — Clean up
 
 ```bash
 terraform destroy -var-file="terraform.tfvars"
+az group delete --name rg-mysqldb-dev --yes --no-wait
 ```
 
 ## Notes vs. the ARM template
