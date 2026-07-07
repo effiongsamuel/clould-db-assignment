@@ -91,6 +91,11 @@ az deployment group show \
   --query properties.outputs
 ```
 
+```bash
+az deployment group list \
+  --resource-group rg-redis-dev \
+  -o table
+```
 **Outputs provided:**
 
 | Output key | Description |
@@ -112,6 +117,15 @@ If you have `redis-cli` installed and want to connect over SSL/TLS, you might ne
 Alternatively, if you temporally set `enableNonSslPort` to `true` (not recommended for production):
 ```bash
 redis-cli -h myapp-redis-dev-001.redis.cache.windows.net -p 6379 -a <your-primary-key>
+redis-cli -h samuel-3mtt-azure-redis-001.redis.cache.windows.net -p 6380 --tls -a "Jqx5KOUXy36yHSEUeSRvpkQpDXnXmDv0xAzCaJrmFsM="
+
+or
+
+redis-cli \
+  -h samuel-3mtt-azure-redis-001.redis.cache.windows.net \
+  -p 6380 \
+  --tls \
+  -a "<your-primary-access-key>"
 ```
 
 ```text
