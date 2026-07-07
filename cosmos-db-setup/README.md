@@ -274,6 +274,9 @@ curl -s -X POST "${ENDPOINT}dbs/AppDatabase/colls/Items/docs" \
 Install the SDK:
 
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt|
 pip install azure-cosmos
 ```
 
