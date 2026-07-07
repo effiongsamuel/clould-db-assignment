@@ -1,0 +1,26 @@
+resource_group_name = "rg-mysqldb-dev"
+location            = "eastus"
+
+server_name                  = "samuel-3mtt-azure-mysql-db-001"
+administrator_login          = "sammysqladmin"
+administrator_login_password = "P@ssw0rd1234!"
+
+mysql_version = "8.0.21"
+
+sku_name        = "B_Standard_B1ms"
+storage_size_gb = 20
+storage_iops    = 360
+
+backup_retention_days         = 7
+geo_redundant_backup_enabled  = false
+high_availability_mode        = "Disabled"
+
+database_name = "appdatabase"
+allow_all_ips = true
+
+tags = {
+  environment = "dev"
+  project     = "mysqldb-setup"
+  team        = "cloud-engineering"
+  managedBy   = "Terraform"
+}

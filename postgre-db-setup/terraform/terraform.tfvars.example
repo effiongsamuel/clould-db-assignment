@@ -1,0 +1,26 @@
+resource_group_name = "rg-postgresdb-dev"
+location            = "eastus"
+
+server_name                  = "samuel-3mtt-azure-postgres-db-001"
+administrator_login          = "sampgadmin"
+administrator_login_password = "P@ssw0rd1234!"
+
+postgres_version = "16"
+
+sku_name        = "B_Standard_B1ms"
+storage_size_gb = 32
+
+backup_retention_days         = 7
+geo_redundant_backup_enabled  = false
+high_availability_mode        = "Disabled"
+
+database_name        = "appdatabase"
+allow_all_ips        = true
+allow_azure_services = true
+
+tags = {
+  environment = "dev"
+  project     = "postgresdb-setup"
+  team        = "cloud-engineering"
+  managedBy   = "Terraform"
+}
