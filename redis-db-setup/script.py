@@ -2,7 +2,7 @@ import redis
 
 HOST = "samuel-3mtt-azure-redis-001.redis.cache.windows.net"
 PORT = 6380
-PASSWORD = "Jqx5KOUXy36yHSEUeSRvpkQpDXnXmDv0xAzCaJrmFsM="
+PASSWORD = "<your-primary-key>"
 
 try:
     # Connect to Redis
