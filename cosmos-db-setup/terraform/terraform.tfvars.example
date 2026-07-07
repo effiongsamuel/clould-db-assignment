@@ -1,0 +1,34 @@
+resource_group_name = "rg-cosmosdb-dev"
+location            = "eastus2"
+secondary_location  = ""
+
+account_name   = "samueleffiong-3mtt-azure-cosmos-db-001"
+database_name  = "Samueleffiong-3mmt-AppDatabase"
+container_name = "Samueleffiong-3mmt-AppContainer"
+
+partition_key_path = "/partitionKey"
+
+default_consistency_level = "Session"
+max_staleness_prefix      = 100000
+max_interval_in_seconds   = 300
+
+enable_automatic_failover       = false
+enable_multiple_write_locations = false
+
+enable_serverless        = false
+throughput_type           = "manual"
+manual_throughput         = 400
+autoscale_max_throughput  = 4000
+
+enable_free_tier             = false
+enable_public_network_access = true
+enable_analytical_storage    = false
+
+default_ttl_seconds = -1
+
+tags = {
+  environment = "dev"
+  project     = "cosmosdb-setup"
+  team        = "cloud-engineering"
+  managedBy   = "Terraform"
+}

@@ -1,0 +1,18 @@
+resource_group_name = "rg-redis-dev"
+location            = "eastus"
+
+redis_cache_name = "samuel-3mtt-azure-redis-001"
+
+sku_name   = "Basic"
+sku_family = "C"
+capacity   = 0
+
+enable_non_ssl_port = false
+minimum_tls_version = "1.2"
+
+tags = {
+  environment = "dev"
+  project     = "redis-setup"
+  team        = "cloud-engineering"
+  managedBy   = "Terraform"
+}
